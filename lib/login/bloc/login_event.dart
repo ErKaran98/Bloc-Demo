@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 abstract class LoginEvent extends Equatable {}
 
 class LoginReqEvent extends LoginEvent {
-LoginReqModel? loginReqModel;
-  LoginReqEvent({this.loginReqModel});
+  LoginReqModel? loginReqModel;
+  LoginReqEvent({required this.loginReqModel});
 
   @override
   // TODO: implement props
