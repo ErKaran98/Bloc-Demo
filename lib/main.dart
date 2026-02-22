@@ -3,6 +3,9 @@ import 'package:bloc_demo/login/login_page_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'counter_page/counter_bloc.dart';
+import 'counter_page/counter_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,9 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => LoginBloc())],
+      providers: [
+        BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => LoginBloc())],
 
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage()),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: CounterPage()),
     );
   }
 }
